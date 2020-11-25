@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 // Render each post
-function renderPost(post) {
+function renderPost(post: any) {
   const {
     data: { title, url, author, id },
   } = post;
@@ -34,13 +34,17 @@ function renderPost(post) {
 }
 
 // Filter, since reddit always returns stickied posts up top
-function nonStickiedOnly(post) {
+function nonStickiedOnly(post: any) {
   return !post.data.stickied;
 }
 
-function App({ domElement }) {
+interface IProps {
+  domElement: any;
+}
+
+const App: React.FC<IProps> = ({ domElement }) => {
   const subreddit = domElement.getAttribute("data-subreddit");
-  const [loading, setLoading] = useState();
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState("");
   const [data, setData] = useState([]);
 
@@ -62,6 +66,7 @@ function App({ domElement }) {
 
   return (
     <div className="reddit_widget__app">
+      <h1>Testing</h1>
       <h1 className="reddit_widget__header">
         Latest posts in{" "}
         <a href={`https://reddit.com/r/${subreddit}`} rel="noopener noreferrer">
@@ -85,6 +90,6 @@ function App({ domElement }) {
       </p>
     </div>
   );
-}
+};
 
 export default App;
