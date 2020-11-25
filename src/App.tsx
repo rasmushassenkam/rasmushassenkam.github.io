@@ -39,7 +39,7 @@ function nonStickiedOnly(post: any) {
 }
 
 interface IProps {
-  domElement: any;
+  domElement: Element;
 }
 
 const App: React.FC<IProps> = ({ domElement }) => {
@@ -66,7 +66,6 @@ const App: React.FC<IProps> = ({ domElement }) => {
 
   return (
     <div className="reddit_widget__app">
-      <h1>Testing</h1>
       <h1 className="reddit_widget__header">
         Latest posts in{" "}
         <a href={`https://reddit.com/r/${subreddit}`} rel="noopener noreferrer">
