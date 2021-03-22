@@ -9,27 +9,32 @@ function renderPost(post: any) {
   const authorUrl = `https://www.reddit.com/u/${author}`;
 
   return (
-    <div className="reddit_widget__post" key={id}>
-      <div className="reddit_widget__posted_by">
-        posted by{" "}
-        <a
-          href={authorUrl}
-          className="reddit_widget__posted_by"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          u/{author}
-        </a>
-      </div>
-      <a
-        href={url}
-        className="reddit_widget__title"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {title}
-      </a>
-    </div>
+    // <div className="reddit_widget__post" key={id}>
+    //   <div className="reddit_widget__posted_by">
+    //     posted by{" "}
+    //     <a
+    //       href={authorUrl}
+    //       className="reddit_widget__posted_by"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       u/{author}
+    //     </a>
+    //   </div>
+    //   <a
+    //     href={url}
+    //     className="reddit_widget__title"
+    //     target="_blank"
+    //     rel="noopener noreferrer"
+    //   >
+    //     {title}
+    //   </a>
+    // </div>
+    <iframe
+      src="https://recipes.plantjammer.com/wasa/"
+      width="100%"
+      height="800px"
+    ></iframe>
   );
 }
 
